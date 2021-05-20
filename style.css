@@ -3,13 +3,22 @@
 }
 
 .container {
+    --boardSize: 840px;
+    --tileSize: 0;  /*Will be initialized by javascript*/
+
     display: grid;
     margin: auto;
-    width: 800px;
-    columns: 800px;
-    grid-template-columns: repeat(16, 50px);
-    grid-template-rows: repeat(16, 50px);
     border-style: solid;
+
+    justify-content: center;
+    align-content: center;
+    background-color: black;
+
+    width: var(--boardSize);
+    height: var(--boardSize);
+
+    grid-template-columns: repeat(var(--tileSize), calc(var(--boardSize) / var(--tileSize)));
+    grid-template-rows: repeat(var(--tileSize), calc(var(--boardSize) / var(--tileSize)));
 }
 
 .tile {
