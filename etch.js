@@ -16,15 +16,23 @@ function initTiles (gridSize) {
 
         board.appendChild(tile);
         tile.addEventListener("mouseover", () => {
-            tile.classList.add("filled");
+            fillTile(tile);
         });
     }
+}
+
+// On mouse hover, increment the hsl hue of tile by 5, from 0 to 360
+function fillTile(tile) {
+    tile.style.setProperty("background-color",
+        `hsl(${tileColorValue}, 90%, 70%)`);
+    tileColorValue = (tileColorValue + 5) % (360 + 5);
 }
 
 function unfillBoard() {
     let tiles = document.getElementsByClassName("tile");
     for (let i=0; i < tiles.length; i++)
-        tiles[i].classList.remove("filled");
+        tiles[i].style.setProperty("background-color", "white");
+    tileColorValue = 0;
 }
 
 function changeGridSize() {
@@ -46,4 +54,5 @@ function initGame(initSize) {
     initTiles(initSize);
 }
 
+let tileColorValue = 0;
 initGame(16);

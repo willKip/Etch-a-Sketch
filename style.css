@@ -1,4 +1,4 @@
-.body {
+body {
     flex-direction: column;
 }
 
@@ -22,10 +22,6 @@
 }
 
 .tile {
-    border: 1px solid black;
+    border: 1px solid #a6a6a6;
     background-color: white;
-}
-
-.filled {
-    background-color: black;
 }
