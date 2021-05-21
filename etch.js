@@ -25,12 +25,16 @@ function unfillBoard() {
     let tiles = document.getElementsByClassName("tile");
     for (let i=0; i < tiles.length; i++)
         tiles[i].classList.remove("filled");
-    console.log("unfilled");
 }
 
 function changeGridSize() {
     let newSize = prompt("Enter the new grid size (1-100)", "16");
-    initTiles(newSize);
+
+    if (getComputedStyle(document.querySelector(".container"))
+        .getPropertyValue("--tileSize") === newSize)
+        unfillBoard();
+    else
+        initTiles(newSize);
 }
 
 function initGame(initSize) {
