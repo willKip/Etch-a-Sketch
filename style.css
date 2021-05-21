@@ -1,27 +1,96 @@
-body {
-    flex-direction: column;
+:root {
+    --boardColor: #f92733;
+    --pressedColor: #cfcfcf;
+    --shadowColor: #6A6A6A;
+
+    /* Dotted background */
+    background: radial-gradient(#ffd6d3 4px, white 5px);
+    background-size: 40px 40px;
 }
 
-.container {
-    --boardSize: 840px;
+#logoText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Lobster", sans-serif;
+    color: #ffe340;
+    font-size: 70px;
+    text-shadow: 2px 2px #262626;
+}
+
+#etchBoard {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-width: 25px;
+    border-color: var(--boardColor);
+    border-radius: 40px;
+    background-color: var(--boardColor);
+
+    max-width: 1000px;
+    min-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+
+    box-shadow: 0 10px var(--shadowColor);
+}
+
+.etchButton {
+    background-color: white;
+    text-align: center;
+    display: inline-block;
+
+    width: 100px;
+    height: 100px;
+
+    border: 2px solid #b1b1b1;
+    border-radius: 50%;
+
+    font-size: 26px;
+    line-height: 1.2;
+    font-family: "Oswald", sans-serif;
+    color: #262626;
+
+    box-shadow: 1px 5px #666;
+}
+
+.etchButton:hover {
+    background-color: var(--pressedColor);
+}
+
+.etchButton:active {
+    background-color: var(--pressedColor);
+    box-shadow: 1px 4px #666;
+    transform: translateY(1px);
+}
+
+#buttonContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tileBoard {
+    --boardSize: 720px;
     --tileSize: 0;  /*Will be initialized by javascript*/
 
     display: grid;
     margin: auto;
-    border-style: solid;
 
     justify-content: center;
     align-content: center;
-    background-color: black;
+    background-color: var(--boardColor);
 
     width: var(--boardSize);
     height: var(--boardSize);
 
+    /* Initialize tileSize*tileSize grid with board-fitting tile size */
     grid-template-columns: repeat(var(--tileSize), calc(var(--boardSize) / var(--tileSize)));
     grid-template-rows: repeat(var(--tileSize), calc(var(--boardSize) / var(--tileSize)));
 }
 
 .tile {
-    border: 1px solid #a6a6a6;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #cfcfcf;
     background-color: white;
 }

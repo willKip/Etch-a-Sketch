@@ -1,4 +1,6 @@
-# Etch-a-Sketch
-Interactive Javascript page where you can fill in a grid with your mouse.
+# Rainbow Sketcher
+Interactive Javascript page where you can fill in a grid with shifting rainbow hues with your mouse.
 
-The grid can be reset, or change size to anywhere from a 1x1 grid to a 100x100 one.
+The grid size can be freely set anywhere from 1x1 to 100x100 squares.
+
+https://willkip.github.io/rainbow-sketcher/

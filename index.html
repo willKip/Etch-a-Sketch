@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <title>Etch-a-Sketch</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Lobster">
+    <title>Rainbow Sketcher</title>
 </head>
 <body>
-    <button id="resetButton">Reset</button>
-    <button id="changeGridSize">Change Size</button>
-    <div class="container">
-
+<div id="etchBoard">    <div class="tileBoard"></div>
+    <div id="buttonContainer">
+        <button id="resetButton" class="etchButton">Reset</button>
+        <div id="logoText"><i>Rainbow Sketcher</i></div>
+        <button id="changeGridSize" class="etchButton">Change<br />Size</button>
     </div>
-    <script src="etch.js"></script>
+    <script src="etch.js"></script></div>
 </body>
 </html>

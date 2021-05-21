@@ -3,9 +3,8 @@ function initTiles (gridSize) {
     if (gridSize > 100) gridSize = 100;
     else if (gridSize <= 0) gridSize = 1;
 
-    let board = document.querySelector(".container");
+    let board = document.querySelector(".tileBoard");
 
-    // Clear tiles from board
     while (board.firstChild) board.removeChild(board.firstChild);
 
     board.style.setProperty("--tileSize", gridSize)
@@ -19,30 +18,38 @@ function initTiles (gridSize) {
             fillTile(tile);
         });
     }
+    tileColorValue = 0;
 }
 
 // On mouse hover, increment the hsl hue of tile by 5, from 0 to 360
 function fillTile(tile) {
     tile.style.setProperty("background-color",
         `hsl(${tileColorValue}, 90%, 70%)`);
+    tile.style.setProperty("border-color",
+        `hsl(${tileColorValue}, 90%, 70%)`);
+
     tileColorValue = (tileColorValue + 5) % (360 + 5);
 }
 
 function unfillBoard() {
     let tiles = document.getElementsByClassName("tile");
-    for (let i=0; i < tiles.length; i++)
+    for (let i=0; i < tiles.length; i++) {
         tiles[i].style.setProperty("background-color", "white");
+        tiles[i].style.setProperty("border-color", "#cfcfcf");
+    }
     tileColorValue = 0;
 }
 
 function changeGridSize() {
     let newSize = prompt("Enter the new grid size (1-100)", "16");
 
-    if (getComputedStyle(document.querySelector(".container"))
-        .getPropertyValue("--tileSize") === newSize)
-        unfillBoard();
-    else
-        initTiles(newSize);
+    if (newSize !== null) {
+        if (getComputedStyle(document.querySelector(".tileBoard"))
+            .getPropertyValue("--tileSize") === newSize)
+            unfillBoard();
+        else
+            initTiles(newSize);
+    }
 }
 
 function initGame(initSize) {
