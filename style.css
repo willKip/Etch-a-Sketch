@@ -9,6 +9,7 @@
 }
 
 #logoText {
+    user-select: none;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,22 +37,22 @@
 }
 
 .etchButton {
+    user-select: none;
+    cursor: pointer;
+
     background-color: white;
     text-align: center;
-    display: inline-block;
-
     width: 100px;
     height: 100px;
 
     border: 2px solid #b1b1b1;
     border-radius: 50%;
+    box-shadow: 1px 5px #666;
 
     font-size: 26px;
     line-height: 1.2;
     font-family: "Oswald", sans-serif;
     color: #262626;
-
-    box-shadow: 1px 5px #666;
 }
 
 .etchButton:hover {
@@ -93,4 +94,5 @@
     border-width: 1px;
     border-color: #cfcfcf;
     background-color: white;
+    cursor: pointer;
 }
