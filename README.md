@@ -7,3 +7,5 @@ Interactive webpage where you can fill in a grid with shifting rainbow hues with
 The grid size can be freely set anywhere from 1x1 to 100x100 squares.
 
 https://willkip.github.io/rainbow-sketcher/
+
+![alt A rainbow heart being drawn on the website.](sketcher1.png "Working example of the Sketcher.")
