@@ -1,9 +1,9 @@
 :root {
     --boardColor: #f92733;
     --pressedColor: #cfcfcf;
-    --shadowColor: #6A6A6A;
+    --shadowColor: #6a6a6a;
 
-    /* Dotted background */
+    /* Generate dotted background */
     background: radial-gradient(#ffd6d3 4px, white 5px);
     background-size: 40px 40px;
 }
@@ -19,7 +19,7 @@
     text-shadow: 2px 2px #262626;
 }
 
-#etchBoard {
+#sketchBoard {
     display: flex;
     flex-direction: column;
     border-style: solid;
@@ -32,11 +32,12 @@
     min-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 25px;
 
     box-shadow: 0 10px var(--shadowColor);
 }
 
-.etchButton {
+.sketchButton {
     user-select: none;
     cursor: pointer;
 
@@ -55,11 +56,11 @@
     color: #262626;
 }
 
-.etchButton:hover {
+.sketchButton:hover {
     background-color: var(--pressedColor);
 }
 
-.etchButton:active {
+.sketchButton:active {
     background-color: var(--pressedColor);
     box-shadow: 1px 4px #666;
     transform: translateY(1px);
